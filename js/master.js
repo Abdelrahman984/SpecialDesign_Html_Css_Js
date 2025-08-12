@@ -78,13 +78,16 @@ ul.addEventListener("click", (eve) => {
 //#endregion
 
 //#region Background Images switcher
+let pathPrefix = window.location.pathname.split("/")[1] || "";
+
 let BackgroundImages = [
-  "url('/imgs/01.jpg')",
-  "url('/imgs/02.jpg')",
-  "url('/imgs/03.jpg')",
-  "url('/imgs/04.jpg')",
-  "url('/imgs/05.jpg')",
+  `url(${pathPrefix ? "/" + pathPrefix : ""}/imgs/01.jpg)`,
+  `url(${pathPrefix ? "/" + pathPrefix : ""}/imgs/02.jpg)`,
+  `url(${pathPrefix ? "/" + pathPrefix : ""}/imgs/03.jpg)`,
+  `url(${pathPrefix ? "/" + pathPrefix : ""}/imgs/04.jpg)`,
+  `url(${pathPrefix ? "/" + pathPrefix : ""}/imgs/05.jpg)`,
 ];
+
 const bg1 = document.querySelector(".bg-1");
 const bg2 = document.querySelector(".bg-2");
 
