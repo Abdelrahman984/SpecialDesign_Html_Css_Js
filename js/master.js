@@ -78,14 +78,18 @@ ul.addEventListener("click", (eve) => {
 //#endregion
 
 //#region Background Images switcher
-let pathPrefix = window.location.pathname.split("/")[1] || "";
+// استخرج اسم المشروع من الـ URL لو موجود
+let pathPrefix = window.location.pathname.split("/")[1];
+
+// لو فيه اسم مشروع في المسار أضفه، لو مفيش خليه فاضي
+pathPrefix = pathPrefix ? `/${pathPrefix}` : "";
 
 let BackgroundImages = [
-  `url(${pathPrefix ? "/" + pathPrefix : ""}/imgs/01.jpg)`,
-  `url(${pathPrefix ? "/" + pathPrefix : ""}/imgs/02.jpg)`,
-  `url(${pathPrefix ? "/" + pathPrefix : ""}/imgs/03.jpg)`,
-  `url(${pathPrefix ? "/" + pathPrefix : ""}/imgs/04.jpg)`,
-  `url(${pathPrefix ? "/" + pathPrefix : ""}/imgs/05.jpg)`,
+  `url(${pathPrefix}/imgs/01.jpg)`,
+  `url(${pathPrefix}/imgs/02.jpg)`,
+  `url(${pathPrefix}/imgs/03.jpg)`,
+  `url(${pathPrefix}/imgs/04.jpg)`,
+  `url(${pathPrefix}/imgs/05.jpg)`,
 ];
 
 const bg1 = document.querySelector(".bg-1");
